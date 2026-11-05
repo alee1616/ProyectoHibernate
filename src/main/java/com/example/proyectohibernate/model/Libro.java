@@ -2,8 +2,8 @@ package com.example.proyectohibernate.model;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "libros", schema = "catalogos")
+@Entity //representa una figura de base de datos
+@Table(name = "libros", schema = "catalogos") //su equivalente en la base de datos
 
 public class Libro {
 
@@ -26,8 +26,7 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(long id, String titulo, String autor, int anioPublicacion, String precio) {
-        this.id = id;
+    public Libro(String titulo, String autor, int anioPublicacion, String precio) {
         this.titulo = titulo;
         this.autor = autor;
         this.anioPublicacion = anioPublicacion;
