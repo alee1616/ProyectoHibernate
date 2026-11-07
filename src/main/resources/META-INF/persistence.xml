@@ -7,13 +7,13 @@
         <class>com.example.proyectohibernate.model.Libro</class>
         <properties>
             <!-- Configuración de la conexión a la base de datos -->
-            <property name="jakarta.persistence.jdbc.Driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432"/>
-            <property name="jakarta.persistence.jdbc.user" value="postresql"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bdbiblioteca"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
             <property name="jakarta.persistence.jdbc.password" value="${DB_PASSWORD}"/>
 
             <!-- Configuración de Hibernate -->
-            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
 

@@ -2,9 +2,10 @@ package com.example.proyectohibernate.model;
 
 import jakarta.persistence.*;
 
-@Entity //representa una figura de base de datos
-@Table(name = "libros", schema = "catalogos") //su equivalente en la base de datos
+import java.math.BigDecimal;
 
+@Entity //representa una figura de base de datos
+@Table(name = "libro", schema = "catalogos") //su equivalente en la base de datos
 public class Libro {
 
     @Id
@@ -21,12 +22,12 @@ public class Libro {
      private int anioPublicacion;
 
      @Column(name = "precio", nullable = false, precision = 10, scale = 2)
-     private String precio;
+     private BigDecimal precio;
 
     public Libro() {
     }
 
-    public Libro(String titulo, String autor, int anioPublicacion, String precio) {
+    public Libro(String titulo, String autor, int anioPublicacion, BigDecimal precio) {
         this.titulo = titulo;
         this.autor = autor;
         this.anioPublicacion = anioPublicacion;
@@ -65,11 +66,11 @@ public class Libro {
         this.anioPublicacion = anioPublicacion;
     }
 
-    public String getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio( BigDecimal precio) {
         this.precio = precio;
     }
 
