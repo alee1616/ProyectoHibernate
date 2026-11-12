@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_LEFT" spacing="15.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectohibernate.controller.CategoriaController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <Label text="Gestión de Categorías - Hibernate ORM" textFill="#2c3e50">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <VBox spacing="10.0">
+        <Label text="Nombre:" textFill="#34495e">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtNombre" promptText="Nombre de la categoría" />
+
+        <Label text="Descripción:" textFill="#34495e">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="txtDescripcion" prefHeight="65.0" promptText="Breve descripción de la categoría..." wrapText="true" />
+
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button fx:id="btnGuardar" onAction="#guardarCategoria" prefWidth="110.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4px;" text="Guardar categoría">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+
+            <Button fx:id="btnModificar" onAction="#modificarCategoria" prefWidth="110.0" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4px;" text="Modificar">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+
+            <Button fx:id="btnEliminar" onAction="#eliminarCategoria" prefWidth="110.0" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4px;" text="Eliminar">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+
+            <Button fx:id="btnLimpiar" onAction="#limpiarCampos" prefWidth="110.0" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4px;" text="Limpiar campos">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+        </HBox>
+
+        <Label text="Seleccione una categoría de la tabla para modificarla o eliminarla." textFill="#7f8c8d">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </Label>
+    </VBox>
+
+    <TableView fx:id="tableCategorias" prefHeight="300.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="70.0" text="ID" />
+            <TableColumn fx:id="colNombre" prefWidth="230.0" text="Nombre" />
+            <TableColumn fx:id="colDescripcion" prefWidth="400.0" text="Descripción" />
+        </columns>
+    </TableView>
+</VBox>

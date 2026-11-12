@@ -5,6 +5,7 @@
             org.hibernate.jpa.HibernatePersistenceProvider
         </provider>
         <class>com.example.proyectohibernate.model.Libro</class>
+        <class>com.example.proyectohibernate.model.Categoria</class>
         <properties>
             <!-- Configuración de la conexión a la base de datos -->
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>

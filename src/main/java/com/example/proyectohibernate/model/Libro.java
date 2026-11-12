@@ -24,6 +24,10 @@ public class Libro {
      @Column(name = "precio", nullable = false, precision = 10, scale = 2)
      private BigDecimal precio;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id", nullable = false) // Nombre de la columna clave foránea en tu tabla libro
+    private Categoria categoria;
+
     public Libro() {
     }
 
@@ -32,6 +36,7 @@ public class Libro {
         this.autor = autor;
         this.anioPublicacion = anioPublicacion;
         this.precio = precio;
+        this.categoria = categoria;
     }
 
     public long getId() {
@@ -74,4 +79,11 @@ public class Libro {
         this.precio = precio;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }
